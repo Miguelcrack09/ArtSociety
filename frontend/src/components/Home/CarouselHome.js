@@ -1,14 +1,12 @@
-/* import React from 'react';
+import React from 'react';
+import Cards from "./Cards";
+import ImageHome from './ImageHome';
 import { Carousel } from 'react-bootstrap';
-import Cards from "../components/Home/Cards.js";
-import ImageHome from '../components/Home/ImageHome';
 
-
-
-const Home = () => {
-    return ( 
-      <>
-            <Carousel variant="dark">
+const CarouselHome = () => {
+  return (
+    <>
+      <Carousel variant="dark">
                 <Carousel.Item>
                     <ImageHome />
                     <Carousel.Caption>
@@ -24,21 +22,12 @@ const Home = () => {
                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
                     </Carousel.Caption>
                 </Carousel.Item>
-                <Carousel.Item>
-                    <ImageHome />
-
-                    <Carousel.Caption>
-                        <h3>Third slide label</h3>
-                        <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
-                    </Carousel.Caption>
-                </Carousel.Item>
-            </Carousel>
+            </Carousel>          
             <Cards />
             <Cards />
             <br />
-          
-      </>  
-    )
+    </>
+  )
 }
 
-export default Home */
+export default CarouselHome
