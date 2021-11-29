@@ -3,13 +3,14 @@ import NavBarHome from "./components/NavBarHome";
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
-import Home from "./screens/Home";
+
 import HomeUsers from "./screens/HomeUsers";
 import Login from "./screens/Login";
 import Obra from "./screens/Obra";
 import Users from "./screens/Users";
 import NotFound from "./screens/NotFound";
-
+import SearchGenero from "./screens/SearchGenero";
+import SearchResults from "./screens/SearchResult";
 function App() {
     return (
         <BrowserRouter>
@@ -17,10 +18,11 @@ function App() {
             <Routes>
               <Route path="/" element={<Login/>}/>
               <Route path="*" element={<NotFound/>}/>
-              <Route path="/home" element={<Home/>}/>
               <Route path="/homeUsers" element={<HomeUsers/>}/>
               <Route path="/obra" element={<Obra/>}/>
               <Route path="/users" element={<Users/>}/>
+              <Route path="/searchgenero" element={<SearchGenero/>}/>
+              <Route path="/ResultGenero" element={<SearchResults/>}/>
             </Routes>
         </BrowserRouter>
     );

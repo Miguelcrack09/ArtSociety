@@ -67,11 +67,27 @@ function deleteObra(eid, callback) {
         })
 }
 
+function searchGenero(genero, callback){
+    return db.collection('Obra').where("genero","==", genero).get()
+        .then((refDoc) => {
+            var arrayObras = [];
+            refDoc.forEach(doc=>{
+                arrayObras.push(doc.data());
+            })
+            callback(arrayObras);
+        })
+        .catch((err) => {
+            callback("Error to search genero", err)
+        })
+}
+
+
 module.exports = {
     getObras,
     getObra,
     addObra,
     updateObraPartial,
     updateObraTotally,
-    deleteObra
+    deleteObra,
+    searchGenero
 }

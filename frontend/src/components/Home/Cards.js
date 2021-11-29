@@ -1,11 +1,57 @@
 import React from 'react'
-import { Card, Row, Col } from 'react-bootstrap'
-import img2 from "../public/img/Tiger.jpeg"
-import img1 from "../public/img/Woman.jpg"
+import { Tooltip, OverlayTrigger, Image } from 'react-bootstrap'
+import img1 from "../public/img/Tiger.jpeg"
+import img2 from "../public/img/Woman.jpg"
 const Cards = () => {
-  return (
+    const renderTooltip = (props) => (
+        <Tooltip id="button-tooltip" {...props}>
+            Simple tooltip<br />
+            hola<br />
+            como estas?<br />
+            This is a longer card with supporting text below as a natural
+            lead-in to additional content. This content is a little bit longer.<br />
+            <Image className="d-fixed mx-2 mt-1" src={img1} height="50px" width="50px" />
+        </Tooltip>
+    );
+
+    return (
     <>
-          <Row xs={1} md={3} className="g-4">
+
+            <OverlayTrigger
+                placement="auto"
+                delay={{ show: 250, hide: 400 }}
+                overlay={renderTooltip}
+            >
+                <Image className="d-fixed mx-3 mt-1" src={img1} height="330px" width="400px" />
+            </OverlayTrigger>,
+            <OverlayTrigger
+                placement="auto"
+                delay={{ show: 250, hide: 400 }}
+                overlay={renderTooltip}
+            >
+                <Image className="d-fixed mx-3 mt-1" src={img2} height="330px" width="400px" />
+            </OverlayTrigger>,
+            <OverlayTrigger
+                placement="auto"
+                delay={{ show: 250, hide: 400 }}
+                overlay={renderTooltip}
+            >
+                <Image className="d-fixed mx-3 mt-1" src={img1} height="330px" width="400px" />
+            </OverlayTrigger>,
+            <OverlayTrigger
+                placement="auto"
+                delay={{ show: 250, hide: 400 }}
+                overlay={renderTooltip}
+            >
+            <Image className="d-fixed mx-3 mt-1" src={img2} height="330px" width="400px"/>
+          </OverlayTrigger>,
+
+
+
+
+
+
+                {/* <Row xs={1} md={3} className="g-4">
               {Array.from({ length: 6 }).map((_, idx) => (
                   <Col>
                       <Card>
@@ -30,9 +76,9 @@ const Cards = () => {
                   </Col>
               ))}
           </Row>
-          <br/>
-    </>
-  )
+          <br/> */}
+            </>
+            )
 }
 
-export default Cards
+            export default Cards

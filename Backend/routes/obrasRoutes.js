@@ -46,4 +46,11 @@ router.delete('/:id', (req, res) => {
     })
 })
 
+router.get("/search/:genero", function (req, res){
+    const genero = req.params.genero;
+    dbE.searchGenero(genero, function(refDoc){
+        res.json(refDoc);
+    })
+})
+
 module.exports = router;
