@@ -53,4 +53,18 @@ router.get("/search/:genero", function (req, res){
     })
 })
 
+router.get("/searchs/:user", function (req, res){
+    const User = req.params.user;
+    dbE.searchObras(User, function(refDoc){
+        res.json(refDoc);
+    })
+})
+
+router.get("/buscar/:Id", function (req, res){
+    const DNI = req.params.Id;
+    dbE.searchObra(DNI, function(refDoc){
+        res.json(refDoc);
+    })
+})
+
 module.exports = router;

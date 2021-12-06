@@ -10,14 +10,14 @@ const CarouselLogin = () => {
     <>
       <Carousel variant="light">
         <Carousel.Item>
-        <Image className="d-block" src={img3} rounded height="569px" width="100%"/>
+        <Image className="d-block" src={img3} height="569px" width="100%"/>
           <Carousel.Caption>
             <ButtonLogin />
             <h1>Uneté a esta gran comunidad</h1>
           </Carousel.Caption>
         </Carousel.Item>
         <Carousel.Item>
-        <Image className="d-block" src={img2} rounded height="569px" width="100%"/>
+        <Image className="d-block" src={img2} height="569px" width="100%"/>
 
           <Carousel.Caption>
             <h3>Second slide label</h3>

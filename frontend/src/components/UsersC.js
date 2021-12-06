@@ -1,18 +1,37 @@
-import React from 'react'
-import { Container, Row, Col, Stack, Image, Card, Button, ListGroup, ListGroupItem } from 'react-bootstrap'
-import iconouser from '../assets/img/gatoconvinito.jpg'
+import React, { useState, useEffect } from "react";
+import { Container, Row, Col, Stack, Image, Card, Button, ListGroup, ListGroupItem, ButtonGroup } from 'react-bootstrap'
+import { getObra, searchObras } from '../apis/ArtSocietyCRUD';
+
+
+
+const User = localStorage.getItem('User');
+const obra = "dDLGSLRqYvWCqQqImBBA7zDccG72"
 
 const UsersC = () => {
+
+
+    searchObras(User, (res) => {
+        console.log(res);
+    })
+
+    const [results, setResults] = useState([]);
+
+    useEffect(() => {
+        searchObras(User, setResults);
+    }, []);
+
     const user = JSON.parse(localStorage.getItem('data'));
     return (
         <>
-           <Container>
+            <Container>
                 <Row>
                     <Col>
                         <Stack direction="horizontal" gap={3} className="align-items-center">
-                            <Stack gap={2} className='align-items-center'>
-                                <br/>
-                                <Image src={user.Photo} roundedCircle height="200px" width="200px" />
+                            
+                            <Stack gap={3} className='align-items-center'>
+                                <br />
+                                
+                                <Image src={user.Photo} roundedCircle height="225px" width="225px" />
                                 <Card bg="dark" text="white" style={{ width: '25rem' }}>
                                     <Card.Header>
                                         <Card.Title text-align="center">{user.Name}</Card.Title>
@@ -20,6 +39,7 @@ const UsersC = () => {
                                     <Card.Body>
                                         <Card.Text>
                                             Biography
+
                                         </Card.Text>
                                     </Card.Body>
                                     <ListGroup className="list-group-flush">
@@ -27,30 +47,47 @@ const UsersC = () => {
                                         <ListGroupItem>Contact (Phone, Email)</ListGroupItem>
                                     </ListGroup>
                                 </Card>
+                               
+                                <ButtonGroup className="mb-auto">
+                                    <Button variant="dark" href="http://localhost:3000/update">Update profile</Button>
+                                    <Button variant="secondary">Upload</Button>
+
+                                </ButtonGroup>
                             </Stack>
                             <Container>
-                                <br/>
-                                <Row xs={3} md={2} className="g-4">
-                                    {Array.from({ length: 4 }).map((_, idx) => (
-                                        <Col>
-                                            <Card bg="dark" text="white" style={{ width: '20rem' }}>
-                                                <Card.Img variant="top" src={iconouser} />
-                                                <Card.Body>
-                                                    <Card.Title>Art title</Card.Title>
-                                                    <Card.Text>
-                                                        Art description
-                                                    </Card.Text>
+                                <br />
+                                {/* <Row xs={3} md={4} className="g-4"> */}
+                                {/* {Array.from({ length: 1 }).map((_, idx) => ( */}
+
+
+                                {results.map((res) => (
+                                    <Container>
+
+                                        <Card bg="dark" text="white" style={{ width: '20rem' }}>
+                                            <Card.Img variant="top" src={res.Images} />
+                                            <Card.Body>
+                                                <Card.Title>{res.title}</Card.Title>
+                                                <Card.Text>
+                                                    {res.Description}
+                                                </Card.Text>
+                                                <Stack gap={1} className="text-center">
                                                     <Button variant="outline-light" href='/obra'>See more...</Button>
-                                                </Card.Body>
-                                            </Card>
-                                        </Col>
-                                    ))}
-                                </Row>
+                                                    <Button variant="outline-danger" href="/del" >Delete</Button>
+                                                </Stack>
+
+
+                                            </Card.Body>
+                                        </Card></Container>))}
+
+
+
+                                {/* } */}
+                                {/* </Row> */}
                             </Container>
                         </Stack>
                     </Col>
                 </Row>
-            </Container>
+            </Container >
         </>
     )
 }
@@ -83,88 +120,3 @@ export default UsersC
 
 
 
-                {/* <Row>
-                    <Col>
-                        <Card style={{ width: '18rem' }}>
-                        <Card.Img variant="top" src={iconouser} />
-                            <Card.Body>
-                                <Card.Title>Art Title</Card.Title>
-                                <Card.Text>
-                                    Art description.
-                                </Card.Text>
-                                <Button variant="primary" href='/obra'>See more...</Button>
-                            </Card.Body>
-                        </Card>
-                    </Col>
-                    <Col>
-                        <Card style={{ width: '18rem' }}>
-                            <Card.Img variant="top" src={iconouser} />
-                            <Card.Body>
-                                <Card.Title>Art Title</Card.Title>
-                                <Card.Text>
-                                    Art description.
-                                </Card.Text>
-                                <Button variant="primary">See more...</Button>
-                            </Card.Body>
-                        </Card>
-                    </Col>
-                    <Col>
-                        <Card style={{ width: '18rem' }}>
-                            <Card.Img variant="top" src={iconouser} />
-                            <Card.Body>
-                                <Card.Title>Art Title</Card.Title>
-                                <Card.Text>
-                                    Art description.
-                                </Card.Text>
-                                <Button variant="primary">See more...</Button>
-                            </Card.Body>
-                        </Card>
-                    </Col>
-                </Row>
-                <Row>
-                    <Col>
-                        <Card style={{ width: '18rem' }}>
-                            <Card.Img variant="top" src={iconouser} />
-                            <Card.Body>
-                                <Card.Title>Art Title</Card.Title>
-                                <Card.Text>
-                                    Art description.
-                                </Card.Text>
-                                <Button variant="primary">See more...</Button>
-                            </Card.Body>
-                        </Card>
-                    </Col>
-                    <Col>
-                        <Card style={{ width: '18rem' }}>
-                            <Card.Img variant="top" src={iconouser} />
-                            <Card.Body>
-                                <Card.Title>Art Title</Card.Title>
-                                <Card.Text>
-                                    Art description.
-                                </Card.Text>
-                                <Button variant="primary">See more...</Button>
-                            </Card.Body>
-                        </Card>
-                    </Col>
-                    <Col>
-                        <Card style={{ width: '18rem' }}>
-                            <Card.Img variant="top" src={iconouser} />
-                            <Card.Body>
-                                <Card.Title>Art Title</Card.Title>
-                                <Card.Text>
-                                    Art description.
-                                </Card.Text>
-                                <Button variant="primary">See more...</Button>
-                            </Card.Body>
-                        </Card>
-                    </Col>
-                </Row>
-            </Container>
-
-
-        </>
-    )
-}
-
-export default UsersC
- */}

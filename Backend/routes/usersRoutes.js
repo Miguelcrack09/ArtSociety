@@ -17,6 +17,15 @@ router.post('/', (req, res) => {
     })
 })
 
+router.post("/UserID/:id", function (req, res) {
+    const uid = req.params.id;
+    const artist = req.body;
+    artist.id = uid;
+    dbU.addUsersWithID(uid, artist, function (status) {
+      res.json(status);
+    });
+  });
+
 router.put('/:id', (req, res) => {
     const uid = req.params.id;
     const User = req.body;
@@ -28,6 +37,7 @@ router.put('/:id', (req, res) => {
 router.patch('/:id', (req, res) => {
     const uid = req.params.id;
     const User = req.body;
+    User.id = uid;
     dbU.updateUsersPartial(uid, User, function(response) {
         res.send(response)
     })

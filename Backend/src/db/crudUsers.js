@@ -21,6 +21,19 @@ function addUsers(User, callback) {
         })
 }
 
+function addUsersWithID(uid, artist, callback) {
+    return db
+      .collection("Users")
+      .doc(uid)
+      .set(artist)
+      .then(() => {
+        callback("Success");
+      })
+      .catch((error) => {
+        callback(`Error to get users ${error}`);
+      });
+  }
+
 function updateUsersTotally(uid, User, callback) {
     return db.collection('Users').doc(uid).set(User)
         .then(() => {
@@ -56,5 +69,6 @@ module.exports = {
     addUsers,
     updateUsersPartial,
     updateUsersTotally,
-    deleteUsers
+    deleteUsers,
+    addUsersWithID
 }

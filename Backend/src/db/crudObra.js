@@ -4,8 +4,10 @@ function getObras(callback) {
     return db.collection('Obra').get()
         .then((refDoc) => {
             var arrayObras = [];
-            refDoc.forEach((doc) => {
-                arrayObras.push(doc.data());
+            refDoc.forEach((obras) => {
+                const obj = obras.data();
+                obj.uid = obras.id;
+                arrayObras.push(obj);
                 //console.log(doc.id, '=>', doc.data());
             })
             callback(arrayObras);
@@ -19,8 +21,8 @@ function getObras(callback) {
 
 function getObra(eid, callback) {
     return db.collection('Obra').doc(eid).get()
-        .then((doc) => {
-            callback(doc.data())
+        .then((refDoc) => {
+            callback(refDoc.data());
         })
         .catch((err) => {
             callback(`Error to get obra ${err}`);
@@ -67,11 +69,11 @@ function deleteObra(eid, callback) {
         })
 }
 
-function searchGenero(genero, callback){
-    return db.collection('Obra').where("genero","==", genero).get()
+function searchGenero(genero, callback) {
+    return db.collection('Obra').where("genero", "==", genero).get()
         .then((refDoc) => {
             var arrayObras = [];
-            refDoc.forEach(doc=>{
+            refDoc.forEach(doc => {
                 arrayObras.push(doc.data());
             })
             callback(arrayObras);
@@ -81,6 +83,24 @@ function searchGenero(genero, callback){
         })
 }
 
+function searchObras(User, callback) {
+    return db.collection('Obra').where("User", "==", User).get()
+    .then((refDoc) => {
+        var arrayObras = [];
+        refDoc.forEach((obras) => {
+            const obj = obras.data();
+            obj.uid = obras.id;
+            arrayObras.push(obj);
+            //console.log(doc.id, '=>', doc.data());
+        })
+            callback(arrayObras);
+        })
+        .catch((err) => {
+            callback("Error to search User", err)
+        })
+}
+
+
 
 module.exports = {
     getObras,
@@ -89,5 +109,6 @@ module.exports = {
     updateObraPartial,
     updateObraTotally,
     deleteObra,
-    searchGenero
+    searchGenero,
+    searchObras
 }
