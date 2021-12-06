@@ -14,6 +14,7 @@ import SearchResults from "./screens/SearchResult";
 import Register from "./screens/Register";
 import ResultUpdate from "./screens/ResultUpdate";
 import ResultDelete from "./screens/ResultDelete";
+import ConfObra from "./screens/ConfObra";
 function App() {
     return (
         <BrowserRouter>
@@ -29,6 +30,7 @@ function App() {
               <Route path="/Register" element={<Register/>}/>
               <Route path="/Update" element={<ResultUpdate/>}/>
               <Route path="/del" element={<ResultDelete/>}/>
+              <Route path="/Add" element={<ConfObra/>}/>
             </Routes>
         </BrowserRouter>
     );

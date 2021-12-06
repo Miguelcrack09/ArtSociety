@@ -69,3 +69,13 @@ export function deleteObra(id, callback){
         console.log(err);
     })
 }
+
+export function addObra(Obra, callback){
+    axios.post("http://localhost:5000/obras",Obra)
+    .then((res)=>{
+      callback(res.data);
+    })
+    .catch((err)=>{
+      callback(err);
+    })
+  }
