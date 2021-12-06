@@ -20,7 +20,7 @@ const RegisterArtis = () => {
             if (res == "Success") {
                 user.flagNewUser = false;
                 localStorage.setItem("user", JSON.stringify(user));
-                window.location.href = "http://localhost:3000/homeusers";
+                window.location.href = "/homeusers";
             } else {
                 alert("Algo salió mal, vuelve a intentarlo")
             }

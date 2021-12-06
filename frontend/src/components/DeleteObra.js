@@ -11,7 +11,7 @@ const DeleteObra = () => {
         deleteObra(Id, (res) => {
             console.log(res);
             if (res == "Success") {
-                window.location.href = "http://localhost:3000/users";
+                window.location.href = "/users";
             } else {
                 alert("Algo salió mal, vuelve a intentarlo")
             }

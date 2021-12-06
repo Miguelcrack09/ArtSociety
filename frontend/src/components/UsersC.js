@@ -51,7 +51,7 @@ const UsersC = () => {
                                 </Card>
                                
                                 <ButtonGroup className="mb-auto">
-                                    <Button variant="dark" href="http://localhost:3000/update">Update profile</Button>
+                                    <Button variant="dark" href="/update">Update profile</Button>
                                     <Button variant="secondary" href="/add">Upload</Button>
 
                                 </ButtonGroup>

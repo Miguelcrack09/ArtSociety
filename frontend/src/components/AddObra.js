@@ -18,7 +18,7 @@ const AddObra = () => {
             console.log(res);
             if (res == "Success") {
                 localStorage.setItem("ObraD", JSON.stringify(User));
-                window.location.href = "http://localhost:3000/users";
+                window.location.href = "/users";
             } else {
                 alert("Algo salió mal, vuelve a intentarlo")
             }

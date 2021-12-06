@@ -22,7 +22,7 @@ const UpdateProfile = () => {
       if (res == "Success") {
         //user.flagNewUser = false;
         //localStorage.setItem("user", JSON.stringify(user));
-        window.location.href = "http://localhost:3000/users";
+        window.location.href = "/users";
       } else {
         alert("Algo salió mal, vuelve a intentarlo")
       }
@@ -69,7 +69,7 @@ const UpdateProfile = () => {
               <Button variant="dark" type="submit">
                 Update
               </Button>
-              <Button variant="secondary" href='http://localhost:3000/users'>
+              <Button variant="secondary" href='/users'>
                 Close
               </Button>
             </Row>
