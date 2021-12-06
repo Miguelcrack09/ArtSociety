@@ -1,7 +1,8 @@
 import axios from "axios";
+const baseUrl = "https://artsociety-backend-b13.herokuapp.com";
 
 export function searchGenero(genero, callback){
-    axios.get("http://localhost:5000/obras/search/"+genero)
+    axios.get(baseUrl+"/obras/search/"+genero)
     .then((res)=>{
         callback(res.data);
     })
@@ -11,7 +12,7 @@ export function searchGenero(genero, callback){
 }
 
 export function searchObras(User, callback){
-    axios.get("http://localhost:5000/obras/searchs/"+User)
+    axios.get(baseUrl+"/obras/searchs/"+User)
     .then((res) =>{
         callback(res.data);
     })
@@ -21,7 +22,7 @@ export function searchObras(User, callback){
 }
 
 export function addArtist(artist, callback){
-    axios.post("http://localhost:5000/users/UserID/"+artist.id, artist)
+    axios.post(baseUrl+"/users/UserID/"+artist.id, artist)
     .then((res)=>{
       callback(res.data);
     })
@@ -31,7 +32,7 @@ export function addArtist(artist, callback){
   }
 
   export function getObras(callback){
-    axios.get("http://localhost:5000/obras")
+    axios.get(baseUrl+"/obras")
     .then((res)=>{
         callback(res.data);
     })
@@ -41,7 +42,7 @@ export function addArtist(artist, callback){
 }
 
 export function getObra(id, callback){
-    axios.get("http://localhost:5000/obras/"+id)
+    axios.get(baseUrl+"/obras/"+id)
     .then((res)=>{
         callback(res.data);
     })
@@ -51,7 +52,7 @@ export function getObra(id, callback){
 }
 
 export function updateUsersPartial(User, callback){
-    axios.patch("http://localhost:5000/users/"+User.id, User)
+    axios.patch(baseUrl+"/users/"+User.id, User)
     .then((res)=>{
         callback(res.data);
     })
@@ -61,7 +62,7 @@ export function updateUsersPartial(User, callback){
 }
 
 export function deleteObra(id, callback){
-    axios.delete("http://localhost:5000/obras/"+id)
+    axios.delete(baseUrl+"/obras/"+id)
     .then((res)=>{
         callback(res.data);
     })
@@ -71,7 +72,7 @@ export function deleteObra(id, callback){
 }
 
 export function addObra(Obra, callback){
-    axios.post("http://localhost:5000/obras",Obra.body)
+    axios.post(baseUrl+"/obras",Obra.body)
     .then((res)=>{
       callback(res.data);
     })
