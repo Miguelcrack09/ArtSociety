@@ -3,7 +3,7 @@ import { Form, Button, Container, Row } from 'react-bootstrap'
 import { deleteObra } from '../apis/ArtSocietyCRUD'
 
 const DeleteObra = () => {
-
+    
     function save(even) {
 
         even.preventDefault();

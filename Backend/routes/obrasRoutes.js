@@ -18,8 +18,13 @@ router.get('/:id', function(req, res) {
 
 router.post('/', (req, res) => {
     const Obra = req.body;
-    dbE.addObra(Obra, function(response) {
-        res.send(response);
+    console.log(req.params);
+    dbE.addObra(Obra, function(status) {
+        if (status === "Success") {
+          res.status(201).json(status);
+        } else {
+          res.status(503).json(status);
+        }
     })
 })
 

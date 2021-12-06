@@ -32,7 +32,7 @@ function getObra(eid, callback) {
 function addObra(Obra, callback) {
     return db.collection('Obra').add(Obra)
         .then(() => {
-            callback("Save")
+            callback("Success")
         })
         .catch((err) => {
             callback(`Error to add obra ${err}`);

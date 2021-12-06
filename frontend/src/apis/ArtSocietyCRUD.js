@@ -71,7 +71,7 @@ export function deleteObra(id, callback){
 }
 
 export function addObra(Obra, callback){
-    axios.post("http://localhost:5000/obras",Obra)
+    axios.post("http://localhost:5000/obras",Obra.body)
     .then((res)=>{
       callback(res.data);
     })

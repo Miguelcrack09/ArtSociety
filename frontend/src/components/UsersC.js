@@ -1,14 +1,16 @@
 import React, { useState, useEffect } from "react";
 import { Container, Row, Col, Stack, Image, Card, Button, ListGroup, ListGroupItem, ButtonGroup } from 'react-bootstrap'
-import { getObra, searchObras } from '../apis/ArtSocietyCRUD';
+import { searchObras } from "../apis/ArtSocietyCRUD";
 
 
 
 const User = localStorage.getItem('User');
-const obra = "dDLGSLRqYvWCqQqImBBA7zDccG72"
+
 
 const UsersC = () => {
-
+    const setDeleteInlocalstorage = (del) => {
+        localStorage.setItem('Delete', del);
+      }
 
     searchObras(User, (res) => {
         console.log(res);
@@ -50,7 +52,7 @@ const UsersC = () => {
                                
                                 <ButtonGroup className="mb-auto">
                                     <Button variant="dark" href="http://localhost:3000/update">Update profile</Button>
-                                    <Button variant="secondary">Upload</Button>
+                                    <Button variant="secondary" href="/add">Upload</Button>
 
                                 </ButtonGroup>
                             </Stack>
@@ -72,7 +74,7 @@ const UsersC = () => {
                                                 </Card.Text>
                                                 <Stack gap={1} className="text-center">
                                                     <Button variant="outline-light" href='/obra'>See more...</Button>
-                                                    <Button variant="outline-danger" href="/del" >Delete</Button>
+                                                    <Button variant="outline-danger" href="/del" onClick={()=> setDeleteInlocalstorage(res.uid)} >Delete</Button>
                                                 </Stack>
 
 

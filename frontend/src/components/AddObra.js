@@ -12,11 +12,12 @@ const AddObra = () => {
             Images: even.target[1].value,
             Description: even.target[2].value,
             genero: even.target[3].value,
-            User: User
+            User: User,
         }
         addObra(obj, (res) => {
             console.log(res);
             if (res == "Success") {
+                localStorage.setItem("ObraD", JSON.stringify(User));
                 window.location.href = "http://localhost:3000/users";
             } else {
                 alert("Algo salió mal, vuelve a intentarlo")
