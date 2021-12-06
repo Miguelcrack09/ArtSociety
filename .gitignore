@@ -6,8 +6,8 @@
 **/node_modules/*
 **/.firebaserc
 
-### Firebase Key ###
-artsociety-8b2b9-88e9f2433cbf.json
+# ### Firebase Key ###
+# artsociety-8b2b9-88e9f2433cbf.json
 
 ### Firebase Patch ###
 .runtimeconfig.json
