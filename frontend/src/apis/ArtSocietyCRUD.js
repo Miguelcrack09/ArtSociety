@@ -72,7 +72,7 @@ export function deleteObra(id, callback){
 }
 
 export function addObra(Obra, callback){
-    axios.post(baseUrl+"/obras",Obra.body)
+    axios.post(baseUrl+"/obras",Obra)
     .then((res)=>{
       callback(res.data);
     })
@@ -80,3 +80,13 @@ export function addObra(Obra, callback){
       callback(err);
     })
   }
+
+  export function getUser(id, callback){
+    axios.get(baseUrl+"/users/"+id)
+    .then((res)=>{
+        callback(res.data);
+    })
+    .catch((err)=>{
+        console.log(err);
+    })
+}
