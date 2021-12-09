@@ -1,6 +1,7 @@
 import React from 'react'
 import { Navigate } from 'react-router-dom'
 import SearchBackground from '../components/Search/SearchBackground'
+import { Containerstyled } from '../css/Styledcomp'
 
 const SearchGenero = () => {
     var contentObra = <Navigate to="/" />
@@ -9,7 +10,9 @@ const SearchGenero = () => {
     }
     return (
         <>
-            {contentObra}
+            <Containerstyled>
+                {contentObra}
+            </Containerstyled>
         </>
     )
 }

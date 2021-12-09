@@ -3,7 +3,7 @@ import { Form, Button, Container, Row } from 'react-bootstrap'
 import { addArtist } from '../apis/ArtSocietyCRUD';
 
 const RegisterArtis = () => {
-    var user = JSON.parse(localStorage.getItem("user"));
+    var user = JSON.parse(localStorage.getItem("data"));
     console.log(user)
 
 

@@ -4,6 +4,7 @@ import imagen1 from '../assets/img/jinx.png'
 import imagen2 from '../assets/img/otrajinx.png'
 import imagen3 from '../assets/img/teamojinx.png'
 import vid from '../assets/img/gif.gif'
+import { Containerstyled } from '../css/Styledcomp'
 
 const ObraUser = () => {
     return (
@@ -59,9 +60,9 @@ const ObraUser = () => {
                                             <Card.Text>
                                                 Comment
                                             </Card.Text>
-                                            <Card.Title>Diomedes Díaz</Card.Title>
+                                            <Card.Title>Persona5</Card.Title>
                                             <Card.Text>
-                                                El que tiene pal Whiskey, tiene pal hielo
+                                                Comment
                                             </Card.Text>
                                         </Card.Body>
 

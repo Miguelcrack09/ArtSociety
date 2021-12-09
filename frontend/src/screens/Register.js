@@ -1,6 +1,7 @@
 import React from 'react'
 import RegisterArtis from '../components/RegisterArtis';
 import { Navigate } from 'react-router-dom';
+import { Containerstyled } from '../css/Styledcomp';
 
 const Register = () => {
     var contentObra = <Navigate to="/" />
@@ -9,7 +10,9 @@ const Register = () => {
     }
     return (
         <>
-            {contentObra}
+            <Containerstyled>
+                {contentObra}
+            </Containerstyled>
         </>
     )
 }

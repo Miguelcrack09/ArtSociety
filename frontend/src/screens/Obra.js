@@ -1,6 +1,7 @@
 import React from 'react'
 import ObraUser from '../components/ObraUser'
 import { Navigate } from 'react-router-dom';
+import { Containerstyled } from '../css/Styledcomp';
 
 const Obra = () => {
     var contentObra = <Navigate to="/" />
@@ -9,7 +10,9 @@ const Obra = () => {
     }
     return (
         <>
-            {contentObra}
+            <Containerstyled>
+                {contentObra}
+            </Containerstyled>
         </>
     )
 }

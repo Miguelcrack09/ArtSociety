@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Container, Row, Col,Stack, Image, Card, Button, ListGroup, ListGroupItem, ButtonGroup } from 'react-bootstrap'
 import ImagesUser from "./ImagesUser";
-import UserInfo from "./UserInfo";
 import { getUser } from "../apis/ArtSocietyCRUD";
 
 
@@ -54,8 +53,9 @@ const UsersC = () => {
                                 <ButtonGroup className="mb-auto">
                                     <Button variant="dark" href="/update">Update profile</Button>
                                     <Button variant="secondary" href="/add">Upload</Button>
-
                                 </ButtonGroup>
+                                <br/>
+                                    <br/>
                             </Stack>
                             <Container>
                                 <br />

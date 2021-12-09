@@ -1,6 +1,7 @@
 import React from 'react'
 import UsersC from '../components/UsersC'
 import { Navigate } from 'react-router-dom'
+import { Containerstyled } from '../css/Styledcomp'
 
 const Users = () => {
   var contentUsers =<Navigate to="/"/>
@@ -9,7 +10,10 @@ const Users = () => {
     }
   return (
     <>
+    <Containerstyled>
       {contentUsers}
+    </Containerstyled>
+      
     </>
   )
 }
