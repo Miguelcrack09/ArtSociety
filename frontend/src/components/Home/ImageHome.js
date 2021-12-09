@@ -1,6 +1,6 @@
 import React from 'react'
 import img1 from "../public/img/Woman.jpg";
-import img2 from "../public/img/Lion.jpg";
+import img2 from "../public/img/anime.jpg";
 import { Image, Col } from 'react-bootstrap'
 
 
