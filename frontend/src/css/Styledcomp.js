@@ -5,7 +5,7 @@ import img from '../assets/img/bg2.jpg'
 
 export const Containerstyled = styled.div`
   background-image: url(${img});
-  height: 1500px;
+  height: auto;
   width: auto;
 `;
 
