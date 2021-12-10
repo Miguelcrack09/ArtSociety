@@ -32,10 +32,12 @@ const ResultGenero = () => {
           delay={{ show: 250, hide: 400 }}
           overlay={renderTooltip(res.title, res.Description, res.Images)}
         >
-          <Image className="d-fixed mx-3 mt-1" src={res.Images} height="330px" width="400px" />
+          <Image className="d-fixed mx-3 mt-4" src={res.Images} height="330px" width="400px" />
+          
         </OverlayTrigger>
       ))}
-
+      
+      
     </>
   )
 }

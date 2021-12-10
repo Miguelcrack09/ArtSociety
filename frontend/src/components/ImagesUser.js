@@ -26,7 +26,7 @@ const ImagesUser = () => {
                 
                  
                 
-                            <Card bg="dark" text="white" style={{ width: '20rem' }} className="d-fixed mx-3 mt-4">
+                            <Card bg="dark" text="white" style={{ width: '40rem' }} className="d-fixed mx-4 mt-4">
                                 <Card.Img variant="top" src={res.Images} />
                                 <Card.Body>
                                     <Card.Title>{res.title}</Card.Title>
@@ -42,6 +42,8 @@ const ImagesUser = () => {
 
                                 </Card.Body>
                             </Card>
+
+                            
                             
                 ))}
         </>
