@@ -12,6 +12,7 @@ const SearchGenero = () => {
         <>
             <Containerstyled>
                 {contentObra}
+                <br/>
             </Containerstyled>
         </>
     )

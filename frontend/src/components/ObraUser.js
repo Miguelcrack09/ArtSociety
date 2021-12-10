@@ -14,16 +14,16 @@ const ObraUser = () => {
                     <Col>
                         <Stack direction="horizontal" gap={2}>
                             <Stack gap={2} className="align-items-center">
-                                <div className="bg-light border">
+                                <div bg="dark">
                                     <Image src={imagen1} thumbnail />
                                 </div>
-                                <div className="bg-light border">
+                                <div bg="dark">
                                     <Image src={imagen2} thumbnail />
                                 </div>
-                                <div className="bg-light border">
+                                <div bg="dark">
                                     <Image src={imagen3} thumbnail />
                                 </div>
-                                <div className="bg-light border">
+                                <div bg="dark">
                                     <Image src={vid} thumbnail />
                                 </div>
                             </Stack>
@@ -33,12 +33,12 @@ const ObraUser = () => {
                                     <br />
                                     <Card bg="dark" text="white" style={{ width: '25rem' }}>
                                         <Card.Header>
-                                            <Button variant="link">UserLink</Button>
+                                            <Button variant="link">Link de usuario</Button>
                                         </Card.Header>
                                         <Card.Body>
-                                            <Card.Title>Art Title</Card.Title>
+                                            <Card.Title>Título</Card.Title>
                                             <Card.Text>
-                                                Art Description
+                                                Decripción
                                             </Card.Text>
                                         </Card.Body>
                                     </Card>
@@ -47,8 +47,8 @@ const ObraUser = () => {
                                             <Stack direction="horizontal" gap={3}>
                                                 <Button variant="outline-info">Like</Button>
                                                 <div className="vr" />
-                                                <Form.Control className="me-auto" placeholder="Comment here..." />
-                                                <Button variant="secondary">Submit</Button>                                                                                              
+                                                <Form.Control className="me-auto" placeholder="Comenta aquí..." />
+                                                <Button variant="secondary">Enviar</Button>                                                                                              
                                             </Stack>
                                         </Card.Header>
                                         <Card.Body>

@@ -12,6 +12,7 @@ const ResultDelete = () => {
         <>
             <Containerstyled>
                 {contentObra}
+                <br/>
             </Containerstyled>
         </>
     )

@@ -32,24 +32,24 @@ const AddObra = () => {
             <Container>
                 <Form onSubmit={save}>
                     <Form.Group className="mb-3" controlId="name">
-                        <Form.Label>Title</Form.Label>
+                        <Form.Label>Título</Form.Label>
                         <Form.Control type="text" placeholder="Enter your Title" />
                     </Form.Group>
 
                     <Form.Group className="mb-3" controlId="bio">
-                        <Form.Label>Image</Form.Label>
+                        <Form.Label>Imagen</Form.Label>
                         <Form.Control as="textarea" rows={3} placeholder="Enter URL of Image" type="text" />
                     </Form.Group>
 
                     <Form.Group className="mb-3" controlId="bio">
-                        <Form.Label>Description</Form.Label>
+                        <Form.Label>Descripción</Form.Label>
                         <Form.Control as="textarea" rows={3} placeholder="Description of Obra" type="text" />
                     </Form.Group>
 
                     <Form.Group className="mb-3" controlId="location">
                         <Form.Label>Genero</Form.Label>
                         <Form.Select>
-                            <option>Select a location</option>
+                            <option>Selecciona...</option>
                             <option value="anime">Anime</option>
                             <option value="manga">Manga</option>
                             <option value="urbano">Urbano</option>

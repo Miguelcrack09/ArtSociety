@@ -30,25 +30,26 @@ const UpdateProfile = () => {
   }
   return (
     <>
-      <div style={{ textAlign: "center" }}>
+      <div style={{display: 'flex',  justifyContent:'center', alignItems:'center'}}>
+        <br/>
         <h1>Actualiza tu Perfil</h1>
       </div>
       <Container>
         <Form onSubmit={save}>
           <Form.Group className="mb-3" controlId="name">
-            <Form.Label>User Name</Form.Label>
+            <Form.Label>Nombre de usuario</Form.Label>
             <Form.Control type="text" placeholder="Update User Name" />
           </Form.Group>
 
           <Form.Group className="mb-3" controlId="bio">
-            <Form.Label>Biography</Form.Label>
+            <Form.Label>Biografía</Form.Label>
             <Form.Control as="textarea" rows={3} placeholder="Update your biography" type="text" />
           </Form.Group>
 
           <Form.Group className="mb-3" controlId="location">
-            <Form.Label>Location</Form.Label>
+            <Form.Label>Locación</Form.Label>
             <Form.Select>
-              <option>Select a location</option>
+              <option>Selecciona...</option>
               <option value="Bogotá">Bogotá</option>
               <option value="Cali">Cali</option>
               <option value="Medellin">Medellin</option>
@@ -59,7 +60,7 @@ const UpdateProfile = () => {
           </Form.Group>
 
           <Form.Group className="mb-3" controlId="contactLink">
-            <Form.Label>Contact Link</Form.Label>
+            <Form.Label>Contactos</Form.Label>
             <Form.Control type="text" placeholder="Update your Contact Link" />
           </Form.Group>
 
@@ -69,7 +70,7 @@ const UpdateProfile = () => {
               <Button variant="dark" type="submit">
                 Update
               </Button>
-              <Button variant="secondary" href='/users'>
+              <Button variant="danger" href='/users'>
                 Close
               </Button>
             </Row>

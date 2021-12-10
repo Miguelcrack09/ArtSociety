@@ -18,6 +18,7 @@ const SearchResults = () => {
         <h1>El Genero que seleccionaste es: {genero}</h1>        
         </Container>
         <ResultGenero/>
+        <br/>
         </Containerstyled>
         </>
   );

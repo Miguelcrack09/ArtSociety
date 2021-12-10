@@ -12,6 +12,7 @@ const HomeUsers = () => {
     <>
       <Containerstyled>
         {contentHome}
+        <br/>
       </Containerstyled>
     </>
   )

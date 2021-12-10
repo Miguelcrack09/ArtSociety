@@ -17,6 +17,7 @@ import ResultUpdate from "./screens/ResultUpdate";
 import ResultDelete from "./screens/ResultDelete";
 import ConfObra from "./screens/ConfObra";
 import Scomp from "./screens/Scomp";
+import { FooterS, Policy } from "./css/Styledcomp";
 
 function App() {
     return (
@@ -37,6 +38,13 @@ function App() {
                 <Route path="/Add" element={<ConfObra />} />
                 <Route path="/sc" element={<Scomp />} />
             </Routes>
+            <FooterS>
+                <Policy>
+                    <p>
+                        ©2021 ArtSociety, Inc. All rights reserved.
+                    </p>
+                </Policy>
+            </FooterS>
         </BrowserRouter>
     );
 }

@@ -12,6 +12,7 @@ const ResultUpdate = () => {
         <>
             <Containerstyled>
                 {contentObra}
+                <br/>
             </Containerstyled>
         </>
     )

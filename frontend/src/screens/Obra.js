@@ -12,6 +12,7 @@ const Obra = () => {
         <>
             <Containerstyled>
                 {contentObra}
+                <br/>
             </Containerstyled>
         </>
     )

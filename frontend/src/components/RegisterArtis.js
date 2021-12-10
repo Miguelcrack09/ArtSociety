@@ -34,12 +34,12 @@ const RegisterArtis = () => {
             <Container>
                 <Form onSubmit={save}>
                     <Form.Group className="mb-3" controlId="name">
-                        <Form.Label>Name</Form.Label>
+                        <Form.Label>Nombre</Form.Label>
                         <Form.Control type="text" placeholder="Enter your Name" />
                     </Form.Group>
 
                     <Form.Group className="mb-3" controlId="bio">
-                        <Form.Label>Biography</Form.Label>
+                        <Form.Label>Biografía</Form.Label>
                         <Form.Control as="textarea" rows={3} placeholder="Enter your biography" type="text" />
                     </Form.Group>
 
