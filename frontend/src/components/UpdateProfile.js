@@ -50,30 +50,22 @@ console.log(results)
         <Form onSubmit={save}>
           <Form.Group className="mb-3" controlId="name">
             <Form.Label>Nombre de usuario</Form.Label>
-            <Form.Control type="text" placeholder="Update User Name" />
+            <Form.Control type="text" placeholder="Update User Name" defaultValue={results.name} />
+          </Form.Group>
+
+          <Form.Group className="mb-3" controlId="bio">
+            <Form.Label>Imagen de usuario</Form.Label>
+            <Form.Control as="textarea" rows={1} placeholder="Update your Photo" type="text" defaultValue={results.photoUrl}/>
           </Form.Group>
 
           <Form.Group className="mb-3" controlId="bio">
             <Form.Label>Biografía</Form.Label>
-            <Form.Control as="textarea" rows={3} placeholder="Update your biography" type="text" />
-          </Form.Group>
-
-          <Form.Group className="mb-3" controlId="location">
-            <Form.Label>Locación</Form.Label>
-            <Form.Select>
-              <option>Selecciona...</option>
-              <option value="Bogotá">Bogotá</option>
-              <option value="Cali">Cali</option>
-              <option value="Medellin">Medellin</option>
-              <option value="Ibagué">Ibagué</option>
-              <option value="Cartagena">Cartagena</option>
-              <option value="Barranquilla">Barranquilla</option>
-            </Form.Select>
+            <Form.Control as="textarea" rows={3} placeholder="Update your biography" type="text" defaultValue={results.biography}/>
           </Form.Group>
 
           <Form.Group className="mb-3" controlId="contactLink">
             <Form.Label>Contactos</Form.Label>
-            <Form.Control type="text" placeholder="Update your Contact Link" />
+            <Form.Control type="text" placeholder="Update your Contact Link" defaultValue={results.contactLink} />
           </Form.Group>
 
 

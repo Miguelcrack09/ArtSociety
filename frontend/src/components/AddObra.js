@@ -38,7 +38,7 @@ const AddObra = () => {
 
                     <Form.Group className="mb-3" controlId="bio">
                         <Form.Label>Imagen</Form.Label>
-                        <Form.Control as="textarea" rows={3} placeholder="Enter URL of Image" type="text" />
+                        <Form.Control placeholder="Enter URL of Image" type="text" />
                     </Form.Group>
 
                     <Form.Group className="mb-3" controlId="bio">
