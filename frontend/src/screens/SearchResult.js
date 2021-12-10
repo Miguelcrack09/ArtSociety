@@ -13,11 +13,13 @@ const SearchResults = () => {
   const genero = localStorage.getItem('Genero');
   return (
         <>
-        <Containerstyled>
-          <Container>
+        <Containerstyled style={{ textAlign:"center" }}>
+          <Container >
         <h1>El Genero que seleccionaste es: {genero}</h1>        
         </Container>
+        <div>
         <ResultGenero/>
+        </div>
         <br/>
         </Containerstyled>
         </>

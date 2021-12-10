@@ -10,7 +10,7 @@ const HomeUsers = () => {
   }
   return (
     <>
-      <Containerstyled>
+      <Containerstyled style={{ textAlign:"center" }}>
         {contentHome}
         <br/>
       </Containerstyled>
