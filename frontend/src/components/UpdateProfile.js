@@ -1,27 +1,39 @@
-import React from 'react'
+import React, { useState, useEffect } from "react";
 import { Form, Button, Container, Row } from 'react-bootstrap'
 import { updateUsersPartial } from '../apis/ArtSocietyCRUD';
+import { getUser } from '../apis/ArtSocietyCRUD';
 
+
+const User = localStorage.getItem('User');
 const UpdateProfile = () => {
   var user = JSON.parse(localStorage.getItem("data"));
 
+  getUser(User, (res) => {
+    console.log(res);
+})
+
+const [results, setResults] = useState([]);
+
+useEffect(() => {
+    getUser(User, setResults);
+}, []);
+
+
+console.log(results)
 
 
   function save(even) {
     even.preventDefault();
     const obj = {
       name: even.target[0].value,
-      biography: even.target[1].value,
-      location: even.target[2].value,
+      photoUrl: even.target[1].value,
+      biography: even.target[2].value,
       contactLink: even.target[3].value,
-      photoUrl: user.Photo,
       id: user.DNI,
     }
     updateUsersPartial(obj, (res) => {
       console.log(res);
       if (res == "Success") {
-        //user.flagNewUser = false;
-        //localStorage.setItem("user", JSON.stringify(user));
         window.location.href = "/users";
       } else {
         alert("Algo salió mal, vuelve a intentarlo")
@@ -68,10 +80,10 @@ const UpdateProfile = () => {
           <Container fluid="md">
             <Row>
               <Button variant="dark" type="submit">
-                Update
+                Actualizar
               </Button>
               <Button variant="danger" href='/users'>
-                Close
+                Cerrar
               </Button>
             </Row>
           </Container>

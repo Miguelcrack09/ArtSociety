@@ -20,6 +20,7 @@ const SearchBar = () => {
         <Dropdown.Item href={redirectUrl} onClick={()=> setGeneroInlocalstorage('fanart')}>Fanart</Dropdown.Item>
       </Dropdown.Menu>
     </Dropdown>
+    
   );
 };
 

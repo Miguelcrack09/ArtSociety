@@ -22,7 +22,6 @@ const UsersC = () => {
 
     console.log(results)
 
-    const user = JSON.parse(localStorage.getItem('data'));
     return (
         <>
             <Container>
