@@ -1,12 +1,12 @@
 import React from 'react'
-import img1 from "../public/img/FlechaIzquierda.png";
+import img1 from "../public/img/izq.png";
 import img2 from "../public/img/anime.jpg";
 import img3 from "../public/img/manga.jpg";
 import img4 from "../public/img/Urbano.jpg";
 import img5 from "../public/img/Callejero.jpg";
 import img6 from "../public/img/Fanart.jpg";
 import img7 from "../public/img/Realismo.jpg";
-import img8 from "../public/img/Derecha.png";
+import img8 from "../public/img/der.png";
 import { Image, Col } from 'react-bootstrap'
 
 
