@@ -55,7 +55,7 @@ console.log(results)
 
           <Form.Group className="mb-3" controlId="bio">
             <Form.Label>Imagen de usuario</Form.Label>
-            <Form.Control as="textarea" rows={1} placeholder="Update your Photo" type="text" defaultValue={results.photoUrl}/>
+            <Form.Control placeholder="Update your Photo" type="text" defaultValue={results.photoUrl}/>
           </Form.Group>
 
           <Form.Group className="mb-3" controlId="bio">

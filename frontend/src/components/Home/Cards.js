@@ -17,9 +17,9 @@ const Cards = () => {
     },[]);
 
     const renderTooltip = (title, description) => (
-        <Tooltip id="button-tooltip" >
-            <h1>{title}</h1>
-            <h2>{description}</h2>
+        <Tooltip id="button-tooltip">
+            <h5>{title}</h5>
+            <h6>{description}</h6>
         </Tooltip>
     );
 

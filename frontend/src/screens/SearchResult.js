@@ -1,6 +1,6 @@
 import React from "react";
 import { Container, Row, Col } from "react-bootstrap";
-import {Navigate} from 'react-router-dom';
+import { Navigate } from 'react-router-dom';
 import ResultGenero from "../components/Search/ResultGenero";
 import { Containerstyled } from "../css/Styledcomp";
 
@@ -12,17 +12,18 @@ const SearchResults = () => {
   }
   const genero = localStorage.getItem('Genero');
   return (
-        <>
-        <Containerstyled style={{ textAlign:"center" }}>
-          <Container >
-        <h1>El Genero que seleccionaste es: {genero}</h1>        
+    <>
+      <Containerstyled style={{ textAlign: "center" }}>
+        <Container >
+          <br />
+          <h1>El género que seleccionaste es: {genero}</h1>
         </Container>
         <div>
-        <ResultGenero/>
+          <ResultGenero />
         </div>
-        <br/>
-        </Containerstyled>
-        </>
+        <br />
+      </Containerstyled>
+    </>
   );
 };
 

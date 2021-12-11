@@ -22,13 +22,6 @@ const UsersC = () => {
 
     console.log(results)
 
-    const user = JSON.parse(localStorage.getItem('data'));
-    if (localStorage.getItem('data') != undefined) {
-        var imgUser = <Form className="d-flex">
-            <Image src={user.Photo} roundedCircle height="225px" width="225px" />
-        </Form>
-    }
-
         return (
             <>
                 <Container>
@@ -39,7 +32,7 @@ const UsersC = () => {
                                 <Stack gap={3} className='align-items-center'>
                                     <br />
 
-                                    {imgUser}
+                                    <Image src={results.photoUrl} roundedCircle height="225px" width="225px" />
 
                                     <Card bg="dark" text="white" style={{ width: '25rem' }}>
                                         <Card.Header>
@@ -64,7 +57,7 @@ const UsersC = () => {
                                     <br />
                                     <br />
                                 </Stack>
-                                <Container className="d-fixed mx-2 mt-4">
+                                <Container>
 
                                     {/* <Row xs={3} md={4} className="g-4"> */}
                                     {/* {Array.from({ length: 1 }).map((_, idx) => ( */}
