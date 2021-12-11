@@ -55,6 +55,7 @@ const AddObra = () => {
                             <option value="urbano">Urbano</option>
                             <option value="callejero">Callejero</option>
                             <option value="fanart">Fanart</option>
+                            <option value="realismo">Realismo</option>
                         </Form.Select>
                     </Form.Group>
 

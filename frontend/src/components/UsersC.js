@@ -32,7 +32,7 @@ const UsersC = () => {
                                 <Stack gap={3} className='align-items-center'>
                                     <br />
 
-                                    <Image src={results.photoUrl} roundedCircle height="225px" width="225px" />
+                                    <Image className="d-fixed mx-2" src={results.photoUrl} roundedCircle height="250px" width="250px" />
 
                                     <Card bg="dark" text="white" style={{ width: '25rem' }}>
                                         <Card.Header>

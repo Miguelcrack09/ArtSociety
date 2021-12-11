@@ -27,13 +27,14 @@ const Cards = () => {
         <>
 
             {results.map((res) => (
-
+                
                 <OverlayTrigger
                     placement="auto"
                     delay={{ show: 250, hide: 400 }}
                     overlay={renderTooltip(res.title, res.Description, res.Images)}
-                >
+                ><a href="/obra">
                     <Image className="d-fixed mx-3 mt-4" src={res.Images} height="330px" width="400px"/>
+                </a>
                 </OverlayTrigger>
                 
             ))}
