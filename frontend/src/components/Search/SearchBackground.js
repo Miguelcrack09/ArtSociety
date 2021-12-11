@@ -7,6 +7,7 @@ const SearchBackground = () => {
   var user = JSON.parse(localStorage.getItem("data"));
   return (
     <>
+      
       <Container>
         <Row>
           <Col>

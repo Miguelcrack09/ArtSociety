@@ -16,7 +16,7 @@ const SearchResults = () => {
       <Containerstyled style={{ textAlign: "center" }}>
         <Container >
           <br />
-          <h1>El género que seleccionaste es: {genero}</h1>
+          
         </Container>
         <div>
           <ResultGenero />
