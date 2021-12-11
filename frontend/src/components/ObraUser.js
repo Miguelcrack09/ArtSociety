@@ -1,23 +1,33 @@
-import React from 'react'
+import React, { useState, useEffect } from "react";
 import { Container, Row, Col, Stack, Image, Card, Button, Form } from 'react-bootstrap'
 import imagen1 from '../assets/img/jinx1.jpg'
 import imagen2 from '../assets/img/jinx2.jpg'
 import vid from '../assets/img/jinx.gif'
 import { Containerstyled } from '../css/Styledcomp'
+import { getUser } from "../apis/ArtSocietyCRUD";
 
-const setUserInlocalstorage = (User) => {
-    localStorage.setItem('User', User);
-}
+const User = localStorage.getItem('User');
 
 const ObraUser = () => {
     const ClosseSession = () => {
         localStorage.removeItem('data')
     }
+    getUser(User, (res) => {
+        console.log(res);
+    })
+
+    const [results, setResults] = useState([]);
+
+    useEffect(() => {
+        getUser(User, setResults);
+    }, []);
+
+
     const user = JSON.parse(localStorage.getItem('data'));
     if (localStorage.getItem('data') != undefined) {
         var linkUser = <Form className="d-flex">
-            <Image className='mx-0' src={user.Photo} href="/login" roundedCircle height="35px" width="35px" />
-            <Button variant="link" href="/users" onClick={() => setUserInlocalstorage(user.DNI)}>{user.Name}</Button>
+            <Image className='mx-0' src={results.photoUrl} href="/login" roundedCircle height="35px" width="35px" />
+            <Button variant="link" href="/users">{results.name}</Button>
         </Form>
         return (
             <>

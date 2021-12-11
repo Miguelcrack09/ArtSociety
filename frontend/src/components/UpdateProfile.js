@@ -10,16 +10,16 @@ const UpdateProfile = () => {
 
   getUser(User, (res) => {
     console.log(res);
-})
+  })
 
-const [results, setResults] = useState([]);
+  const [results, setResults] = useState([]);
 
-useEffect(() => {
+  useEffect(() => {
     getUser(User, setResults);
-}, []);
+  }, []);
 
 
-console.log(results)
+  console.log(results)
 
 
   function save(even) {
@@ -28,7 +28,8 @@ console.log(results)
       name: even.target[0].value,
       photoUrl: even.target[1].value,
       biography: even.target[2].value,
-      contactLink: even.target[3].value,
+      location: even.target[3].value,
+      contactLink: even.target[4].value,
       id: user.DNI,
     }
     updateUsersPartial(obj, (res) => {
@@ -42,8 +43,8 @@ console.log(results)
   }
   return (
     <>
-      <div style={{display: 'flex',  justifyContent:'center', alignItems:'center'}}>
-        <br/>
+      <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+        <br />
         <h1>Actualiza tu Perfil</h1>
       </div>
       <Container>
@@ -55,12 +56,25 @@ console.log(results)
 
           <Form.Group className="mb-3" controlId="bio">
             <Form.Label>Imagen de usuario</Form.Label>
-            <Form.Control as="textarea" rows={1} placeholder="Update your Photo" type="text" defaultValue={results.photoUrl}/>
+            <Form.Control placeholder="Update your Photo" type="text" defaultValue={results.photoUrl} />
           </Form.Group>
 
           <Form.Group className="mb-3" controlId="bio">
             <Form.Label>Biografía</Form.Label>
-            <Form.Control as="textarea" rows={3} placeholder="Update your biography" type="text" defaultValue={results.biography}/>
+            <Form.Control as="textarea" rows={3} placeholder="Update your biography" type="text" defaultValue={results.biography} />
+          </Form.Group>
+
+          <Form.Group className="mb-3" controlId="location">
+            <Form.Label>Location</Form.Label>
+            <Form.Select  >
+              <option>{results.location}</option>
+              <option value="Bogotá">Bogotá</option>
+              <option value="Cali">Cali</option>
+              <option value="Medellin">Medellin</option>
+              <option value="Ibagué">Ibagué</option>
+              <option value="Cartagena">Cartagena</option>
+              <option value="Barranquilla">Barranquilla</option>
+            </Form.Select>
           </Form.Group>
 
           <Form.Group className="mb-3" controlId="contactLink">

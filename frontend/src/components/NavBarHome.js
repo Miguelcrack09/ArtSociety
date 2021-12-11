@@ -14,7 +14,7 @@ const NavBarHome = () => {
     const user = JSON.parse(localStorage.getItem('data'));
     if(localStorage.getItem('data') != undefined){
         var infoUsers = <Form className="d-flex">
-        <Nav.Link href="/users"><Image className='mx-0' src={user.Photo} href="/login" roundedCircle height="35px" width="35px" /></Nav.Link>
+        <a href="/users"><Image className='mx-2' src={user.Photo} href="/login" roundedCircle height="55px" width="55px" /></a>
         <Navbar.Brand href="/users" className='mt-1' onClick={()=> setUserInlocalstorage(user.DNI)}>{user.Name}</Navbar.Brand>
         {/* <FormControl
             type="search"
